@@ -1,0 +1,14 @@
+_benchmarks_results/
+core
+CarlaUE4/
+weights/
+Engine/
+CarlaUE4.sh
+__pycache__/
+**.swp
+**.swo
+**.swm
+**.swn
+**.swo
+**.pyc
+full_model_weights.h5
