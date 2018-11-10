@@ -27,6 +27,16 @@ class LongitudinalControl2018(ExperimentSuite):
     @property
     def collision_as_failure(self):
         return True
+    @property
+    def traffic_light_as_failure(self):
+        return False
+    def calculate_time_out(self, path_distance):
+        """
+        Function to return the timeout ,in milliseconds,
+        that is calculated based on distance to goal.
+        This timeout is increased since stop for traffic lights is expected.
+        """
+        return ((path_distance / 1000.0) / 3.0) * 3600.0 + 20.0
 
     def _poses_town01(self):
         """
@@ -35,11 +45,11 @@ class LongitudinalControl2018(ExperimentSuite):
         """
 
         def _poses_navigation():
-            return [[105, 29], [27, 130], [102, 87], [132, 27], [24, 44],
-                    [96, 26], [34, 67], [28, 1], [140, 134], [105, 9],
-                    [148, 129], [65, 18], [21, 16], [147, 97], [42, 51],
-                    [30, 41], [18, 107], [69, 45], [102, 95], [18, 145],
-                    [111, 64], [79, 45], [84, 69], [73, 31], [37, 81]]
+            return [[105, 29], [27, 130], [102, 87], [132, 27], [25, 44],
+                     [4, 64], [34, 67], [54, 30], [140, 134], [105, 9],
+                     [148, 129], [65, 18], [21, 16], [147, 97], [134, 49],
+                     [30, 41], [81, 89], [69, 45], [102, 95], [18, 145],
+                     [111, 64], [79, 45], [84, 69], [73, 31], [37, 81]]
 
         return [_poses_navigation(),
                 _poses_navigation(),
@@ -49,11 +59,10 @@ class LongitudinalControl2018(ExperimentSuite):
 
         def _poses_navigation():
             return [[19, 66], [79, 14], [19, 57], [39, 53], [60, 26],
-                    [53, 76], [42, 13], [31, 71], [59, 35], [47, 16],
-                    [10, 61], [66, 3], [20, 79], [14, 56], [26, 69],
-                    [79, 19], [2, 29], [16, 14], [5, 57], [77, 68],
-                    [70, 73], [46, 67], [57, 50], [61, 49], [21, 12]]
-
+                 [53, 76], [42, 13], [31, 71], [59, 35], [47, 16],
+                 [10, 61], [66, 3], [20, 79], [14, 56], [26, 69],
+                 [79, 19], [2, 29], [16, 14], [5, 57], [77, 68],
+                 [70, 73], [46, 67], [34, 77], [61, 49], [21, 12]]
         return [_poses_navigation(),
                 _poses_navigation(),
                 _poses_navigation()
@@ -71,10 +80,10 @@ class LongitudinalControl2018(ExperimentSuite):
         # This single RGB camera is used on every experiment
 
         camera = Camera('CameraRGB')
-        camera.set(FOV=90)
+        camera.set(FOV=100)
         camera.set_image_size(800, 600)
-        camera.set_position(1.44, 0.0, 1.2)
-        camera.set_rotation(0, 0, 0)
+        camera.set_position(2.0, 0.0, 1.4)
+        camera.set_rotation(-15.0, 0, 0)
 
         if self._city_name == 'Town01':
             poses_tasks = self._poses_town01()
