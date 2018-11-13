@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-# 0: player_start
-90
-# 1: car following: c (default:3)
-3
-# 2: car following: d (default:-0.5)
--0.5
-# 3: Kl_STANLEY (default:1.3)
-1.3
-# 4: Kr_STANLEY (default:3.6)
-3.6
-# 5: K0_STANLEY (default:2)
-2
-# 6: curve_slowdown (default:8)
-8
-# 7: DELTAl_DAMPING (default:0.05)
-0.05
-# 8: DELTAr_DAMPING (default:0.14)
-0.14
-# 9: DELTA0_DAMPING (default:0.05)
-0.05
-# 10: EXP_DECAY(default:0.15)
-=======
 # 0: car following: c (default:3)
 3
 # 1: car following: d (default:-0.5)
@@ -40,5 +17,4 @@
 # 8: DELTA0_DAMPING (default:0.15)
 0.05
 # 9: EXP_DECAY(default:0.15)
->>>>>>> upstream/master
 0.15
