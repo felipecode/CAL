@@ -13,11 +13,7 @@ def print_summary(metrics_summary, weathers, path):
 
     # Improve readability by adding a weather dictionary
     weather_name_dict = {1: 'Clear Noon', 3: 'After Rain Noon',
-<<<<<<< HEAD
-                         5: 'Heavy Rain Noon', 8: 'Clear Sunset', 10: 'blabla',
-=======
-                         6: 'Heavy Rain Noon', 8: 'Clear Sunset',
->>>>>>> upstream/master
+                         6: 'Heavy Rain Noon', 8: 'Clear Sunset',  10: 'rainy after rain',
                          4: 'Cloudy After Rain', 14: 'Soft Rain Sunset'}
 
     # First we write the entire dictionary on the benchmark folder.
@@ -29,20 +25,21 @@ def print_summary(metrics_summary, weathers, path):
     metrics_to_average = [
         'episodes_fully_completed',
         'episodes_completion'
+        'percentage_off_road',
+        'percentage_green_lights'
 
     ]
     # We compute the number  of episodes based on size of average completion
     number_of_episodes = len(list(metrics_summary['episodes_fully_completed'].items())[0][1])
-<<<<<<< HEAD
 
-=======
-    total_average_success = 0
-    
->>>>>>> upstream/master
     for metric in metrics_to_average:
 
         if metric == 'episodes_completion':
             print ("Average Percentage of Distance to Goal Travelled ")
+        elif metric == 'percentage_off_road':
+            print("Average Percentage of Distance to Percentage OffRoad")
+        elif metric == 'percentage_green_lights':
+            print("Average Percentage of Distance to Percentage Green Lights")
         else:
             print ("Percentage of Successful Episodes")
 
@@ -68,10 +65,6 @@ def print_summary(metrics_summary, weathers, path):
         print ('  Average Between Weathers')
         for i in range(len(metric_sum_values)):
             print('    Task ', i, ' -> ', metric_sum_values[i])
-<<<<<<< HEAD
-=======
-            if metric != 'episodes_completion': total_average_success = metric_sum_values[i]
->>>>>>> upstream/master
         print ("")
 
     infraction_metrics = [
@@ -135,9 +128,3 @@ def print_summary(metrics_summary, weathers, path):
 
     print("")
     print("")
-<<<<<<< HEAD
-=======
-    print("TOTAL AVERAGE")
-    print(total_average_success)
-    return total_average_success
->>>>>>> upstream/master
