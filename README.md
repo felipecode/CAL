@@ -37,14 +37,32 @@ In CARLA_0.8.2/ start the server with for example: (see the [CARLA documentation
 
 
 ```Shell
+<<<<<<< HEAD
 ./CarlaUE4.sh Town01 -carla-server -windowed -benchmark -fps=5 -ResX=800 - ResY=600
+=======
+./CarlaUE4.sh Town01 -carla-server -windowed -benchmark -fps=10 -ResX=800 - ResY=600
+>>>>>>> upstream/master
 ```
 
 Open a second terminal, cd into CAL/PythonClient/ and run:
 
 ```Shell
+<<<<<<< HEAD
 python driving_benchmark.py -c Town01
 ```
+=======
+python driving_benchmark.py -c Town02 -v -n test
+
+```
+This runs the basic_experiment benchmark. '-n' is the naming flag (in this example the run is named "test"). If you want to run the CORL 2017 benchmark you need to run 
+
+```Shell
+python driving_benchmark.py -c Town02 -v -n test --corl-2017
+
+``` 
+
+If you want to continue an experiment, you can add the 'continue-experiment' flag.
+>>>>>>> upstream/master
 
 Paper
 -----

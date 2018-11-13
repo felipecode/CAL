@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5bf12d34-a1d7-4d08-a347-17c40c46f77d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/controller/params/cruise_params.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/controller/params/follow_params.txt" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/CAL_agent.py" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/CAL_agent.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/controller/PID_Controller.py" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/controller/PID_Controller.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/controller/params/general_params.txt" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/controller/params/general_params.txt" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/perception/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/perception/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/perception/cal_network.py" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/perception/cal_network.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/perception/model_functions.py" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/perception/model_functions.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/plans/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/plans/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/plans/centerlines.py" afterPath="$PROJECT_DIR$/PythonClient/agents/CAL_agent/plans/centerlines.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/agents/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/agents/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/carla/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/agent.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/agent.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/command_follower.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/command_follower.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/forward_agent.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/forward_agent.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/human_agent.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/human_agent.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/lane_follower.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/lane_follower.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/modules/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/modules/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/modules/controllers.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/modules/controllers.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/modules/obstacle_avoidance.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/modules/obstacle_avoidance.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/modules/utils.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/modules/utils.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/agent/modules/waypointer.py" afterPath="$PROJECT_DIR$/PythonClient/carla/agent/modules/waypointer.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/carla_server_pb2.py" afterPath="$PROJECT_DIR$/PythonClient/carla/carla_server_pb2.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/client.py" afterPath="$PROJECT_DIR$/PythonClient/carla/client.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/driving_benchmark.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/driving_benchmark.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/basic_experiment_suite.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/basic_experiment_suite.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/corl_2017.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/corl_2017.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/experiment_suite.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/experiment_suite.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/longcontrol_2018.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/longcontrol_2018.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/metrics.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/metrics.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/recording.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/recording.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/results_printer.py" afterPath="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/results_printer.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/image_converter.py" afterPath="$PROJECT_DIR$/PythonClient/carla/image_converter.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/pid_controller/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/carla/pid_controller/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/pid_controller/pid.py" afterPath="$PROJECT_DIR$/PythonClient/carla/pid_controller/pid.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town01.png" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town01.png" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town01.txt" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town01.txt" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town01Central.png" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town01Central.png" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town01Lanes.png" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town01Lanes.png" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town02.png" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town02.png" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town02.txt" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town02.txt" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town02Big.png" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town02Big.png" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town02Central.png" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town02Central.png" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/Town02Lanes.png" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/Town02Lanes.png" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/__init__.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/astar.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/astar.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/bezier.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/bezier.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/city_track.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/city_track.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/converter.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/converter.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/graph.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/graph.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/grid.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/grid.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/map.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/map.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/planner/planner.py" afterPath="$PROJECT_DIR$/PythonClient/carla/planner/planner.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/sensor.py" afterPath="$PROJECT_DIR$/PythonClient/carla/sensor.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/settings.py" afterPath="$PROJECT_DIR$/PythonClient/carla/settings.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/tcp.py" afterPath="$PROJECT_DIR$/PythonClient/carla/tcp.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/transform.py" afterPath="$PROJECT_DIR$/PythonClient/carla/transform.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/carla/util.py" afterPath="$PROJECT_DIR$/PythonClient/carla/util.py" />
+      <change beforePath="$PROJECT_DIR$/PythonClient/driving_benchmark.py" afterPath="$PROJECT_DIR$/PythonClient/driving_benchmark.py" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/download_binaries_and_models.sh" afterPath="$PROJECT_DIR$/download_binaries_and_models.sh" />
+      <change beforePath="$PROJECT_DIR$/requirements.yml" afterPath="$PROJECT_DIR$/requirements.yml" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="experiment_suite.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/experiment_suite.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="890">
+              <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="longcontrol_2018.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/longcontrol_2018.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="driving_benchmark.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/driving_benchmark.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#244#259#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#220#235#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transform.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/transform.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1612">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tcp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/tcp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="corl_2017.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/corl_2017.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="890">
+              <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basic_experiment_suite.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/basic_experiment_suite.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="890">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="experiment.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-208">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/metrics.py" />
+        <option value="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/driving_benchmark.py" />
+        <option value="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/recording.py" />
+        <option value="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/results_printer.py" />
+        <option value="$PROJECT_DIR$/PythonClient/driving_benchmark.py" />
+        <option value="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/longcontrol_2018.py" />
+        <option value="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/experiment_suite.py" />
+        <option value="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/corl_2017.py" />
+        <option value="$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/basic_experiment_suite.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1985" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CAL_felipe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAL_felipe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAL_felipe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAL_felipe" type="462c0819:PsiDirectoryNode" />
+              <item name="PythonClient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAL_felipe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAL_felipe" type="462c0819:PsiDirectoryNode" />
+              <item name="PythonClient" type="462c0819:PsiDirectoryNode" />
+              <item name="carla" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAL_felipe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAL_felipe" type="462c0819:PsiDirectoryNode" />
+              <item name="PythonClient" type="462c0819:PsiDirectoryNode" />
+              <item name="carla" type="462c0819:PsiDirectoryNode" />
+              <item name="driving_benchmark" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CAL_felipe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CAL_felipe" type="462c0819:PsiDirectoryNode" />
+              <item name="PythonClient" type="462c0819:PsiDirectoryNode" />
+              <item name="carla" type="462c0819:PsiDirectoryNode" />
+              <item name="driving_benchmark" type="462c0819:PsiDirectoryNode" />
+              <item name="experiment_suites" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5bf12d34-a1d7-4d08-a347-17c40c46f77d" name="Default" comment="" />
+      <created>1541868198418</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541868198418</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/experiment_suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/metrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7254">
+          <caret line="405" column="0" lean-forward="false" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/longcontrol_2018.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/driving_benchmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9522">
+          <caret line="532" column="0" lean-forward="false" selection-start-line="532" selection-start-column="0" selection-end-line="532" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/recording.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4446">
+          <caret line="249" column="50" lean-forward="false" selection-start-line="249" selection-start-column="50" selection-end-line="249" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/results_printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/driving_benchmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="58" column="11" lean-forward="false" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="27" />
+          <folding>
+            <element signature="e#244#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/experiment_suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/metrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7254">
+          <caret line="405" column="0" lean-forward="false" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/longcontrol_2018.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="93" column="40" lean-forward="true" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/driving_benchmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9324">
+          <caret line="532" column="0" lean-forward="false" selection-start-line="532" selection-start-column="0" selection-end-line="532" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/recording.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4446">
+          <caret line="249" column="50" lean-forward="true" selection-start-line="249" selection-start-column="50" selection-end-line="249" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/results_printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/driving_benchmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="58" column="11" lean-forward="true" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="29" />
+          <folding>
+            <element signature="e#244#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/metrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7254">
+          <caret line="405" column="0" lean-forward="false" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/driving_benchmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9522">
+          <caret line="532" column="0" lean-forward="false" selection-start-line="532" selection-start-column="0" selection-end-line="532" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/recording.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4446">
+          <caret line="249" column="50" lean-forward="false" selection-start-line="249" selection-start-column="50" selection-end-line="249" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/results_printer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/driving_benchmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#244#259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#220#235#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/transform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1612">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/tcp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/longcontrol_2018.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/experiment_suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="890">
+          <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/corl_2017.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="890">
+          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment_suites/basic_experiment_suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="890">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PythonClient/carla/driving_benchmark/experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

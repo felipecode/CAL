@@ -9,7 +9,10 @@ import abc
 import logging
 import math
 import time
+<<<<<<< HEAD
 import numpy as np
+=======
+>>>>>>> upstream/master
 
 from carla.client import VehicleControl
 from carla.client import make_carla_client
@@ -21,16 +24,25 @@ from carla.tcp import TCPConnectionError
 from . import results_printer
 from .recording import Recording
 
+<<<<<<< HEAD
 def get_vec_dist(x_dst, y_dst, x_src, y_src):
     vec = np.array([x_dst, y_dst] - np.array([x_src, y_src]))
     dist = math.sqrt(vec[0] ** 2 + vec[1] ** 2)
     return vec / dist, dist
 
+=======
+def cycle_signal(signal, value):
+    signal.pop(0)
+    signal.append(value)
+>>>>>>> upstream/master
 
 def sldist(c1, c2):
     return math.sqrt((c2[0] - c1[0]) ** 2 + (c2[1] - c1[1]) ** 2)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 class DrivingBenchmark(object):
     """
     The Benchmark class, controls the execution of the benchmark interfacing
@@ -74,7 +86,10 @@ class DrivingBenchmark(object):
 
         # We have a default planner instantiated that produces high level commands
         self._planner = Planner(city_name)
+<<<<<<< HEAD
         self._map = self._planner._city_track.get_map()
+=======
+>>>>>>> upstream/master
 
         # TO keep track of the previous collisions
         self._previous_pedestrian_collision = 0
@@ -143,23 +158,36 @@ class DrivingBenchmark(object):
                     time_out = experiment_suite.calculate_time_out(
                         self._get_shortest_path(positions[start_index], positions[end_index]))
 
+<<<<<<< HEAD
                     logging.info('Timeout for Episode: %f', time_out)
                     # running the agent
                     (result, reward_vec, control_vec, final_time, remaining_distance, col_ped,
                      col_veh, col_oth, number_of_red_lights, number_of_green_lights) = \
+=======
+                    # running the agent
+                    (result, reward_vec, control_vec, final_time, remaining_distance, col_ped, col_veh, col_oth) = \
+>>>>>>> upstream/master
                         self._run_navigation_episode(
                             agent, client, time_out, positions[end_index],
                             str(experiment.Conditions.WeatherId) + '_'
                             + str(experiment.task) + '_' + str(start_index)
                             + '.' + str(end_index), experiment_suite.metrics_parameters,
+<<<<<<< HEAD
                             experiment_suite.collision_as_failure,
                             experiment_suite.traffic_light_as_failure)
+=======
+                            experiment_suite.collision_as_failure)
+>>>>>>> upstream/master
 
                     # Write the general status of the just ran episode
                     self._recording.write_summary_results(
                         experiment, pose, rep, initial_distance,
+<<<<<<< HEAD
                         remaining_distance, final_time, time_out, result, col_ped, col_veh, col_oth,
                         number_of_red_lights, number_of_green_lights)
+=======
+                        remaining_distance, final_time, time_out, result, col_ped, col_veh, col_oth)
+>>>>>>> upstream/master
 
                     # Write the details of this episode.
                     self._recording.write_measurements_results(experiment, rep, pose, reward_vec,
@@ -229,6 +257,7 @@ class DrivingBenchmark(object):
             collided_oth = 1
 
         self._previous_pedestrian_collision = measurement.collision_pedestrians
+<<<<<<< HEAD
         self._previous_vehicle_collision = measurement.collision_vehicles
         self._previous_other_collision = measurement.collision_other
 
@@ -358,6 +387,32 @@ class DrivingBenchmark(object):
 
         return None
 
+=======
+        self._previous_vehicle_collision = measurement.collision_other
+
+        return collided_ped, collided_veh, collided_oth
+        
+    def _is_agent_stuck(self, measurements, stuck_vec, old_coll):    
+        # break the episode when the agent is stuck on a static object
+        coll_other = measurements.collision_other 
+        coll_other -= old_coll
+        otherlane = measurements.intersection_otherlane > 0.4
+        offroad = measurements.intersection_offroad > 0.3
+        logging.info("offroad: {}, otherlane: {}, coll_other: {}, old_coll: {}".format(offroad,otherlane,coll_other,old_coll))
+        
+        # if still driving or got unstuck (v > 4km/h)
+        if measurements.forward_speed*3.6 > 4:
+            cycle_signal(stuck_vec, 0)
+            if coll_other: 
+                old_coll += coll_other
+        elif offroad or otherlane or coll_other:
+            cycle_signal(stuck_vec, 1)
+        else:
+            cycle_signal(stuck_vec, 0)
+
+        return all(stuck_vec), stuck_vec, old_coll
+                
+>>>>>>> upstream/master
     def _run_navigation_episode(
             self,
             agent,
@@ -366,8 +421,12 @@ class DrivingBenchmark(object):
             target,
             episode_name,
             metrics_parameters,
+<<<<<<< HEAD
             collision_as_failure,
             traffic_light_as_failure):
+=======
+            collision_as_failure):
+>>>>>>> upstream/master
         """
          Run one episode of the benchmark (Pose) for a certain agent.
 
@@ -384,9 +443,19 @@ class DrivingBenchmark(object):
         """
 
         # Send an initial command.
+<<<<<<< HEAD
         measurements, sensor_data = client.read_data()
         client.send_control(VehicleControl())
 
+=======
+        time.sleep(2)
+        measurements, sensor_data = client.read_data()
+        client.send_control(VehicleControl())
+
+        ### Reset CAL agent
+        agent.reset_state()
+
+>>>>>>> upstream/master
         initial_timestamp = measurements.game_timestamp
         current_timestamp = initial_timestamp
 
@@ -397,10 +466,21 @@ class DrivingBenchmark(object):
         frame = 0
         distance = 10000
         col_ped, col_veh, col_oth = 0, 0, 0
+<<<<<<< HEAD
         traffic_light_state, number_red_lights, number_green_lights = None, 0, 0
         fail = False
         success = False
         not_count = 0
+=======
+        fail = False
+        success = False
+        
+        ### own metrics
+        stuck_vec = [0] * 60 # measure for 60 frames (6 seconds)
+        center_distance_vec = []
+        old_collision_value = 0
+        direction_vec = []
+>>>>>>> upstream/master
 
         while not fail and not success:
 
@@ -409,7 +489,12 @@ class DrivingBenchmark(object):
             # The directions to reach the goal are calculated.
             directions = self._get_directions(measurements.player_measurements.transform, target)
             # Agent process the data.
+<<<<<<< HEAD
             control = agent.run_step(measurements, sensor_data, directions, target)
+=======
+            control = agent.run_step(measurements, sensor_data, directions, target)          
+          
+>>>>>>> upstream/master
             # Send the control commands to the vehicle
             client.send_control(control)
 
@@ -424,12 +509,16 @@ class DrivingBenchmark(object):
                          control.steer, control.throttle, control.brake)
 
             current_timestamp = measurements.game_timestamp
+<<<<<<< HEAD
             logging.info('Timestamp %f', current_timestamp)
+=======
+>>>>>>> upstream/master
             # Get the distance travelled until now
 
             distance = sldist([current_x, current_y],
                               [target.location.x, target.location.y])
             # Write status of the run on verbose mode
+<<<<<<< HEAD
             logging.info('Status:')
             logging.info(
                 '[d=%f] c_x = %f, c_y = %f ---> t_x = %f, t_y = %f',
@@ -453,10 +542,24 @@ class DrivingBenchmark(object):
                 not_count -= 1
                 not_count = max(0, not_count)
 
+=======
+            logging.info('Distance to target: %f', float(distance))
+            
+            # Check if reach the target
+            col_ped, col_veh, col_oth = self._has_agent_collided(measurements.player_measurements, metrics_parameters)
+
+            
+            ### CHANGE TO ORIGINAL CODE #####################
+            is_stuck, stuck_vec, old_collision_value = self._is_agent_stuck(measurements.player_measurements, 
+                                                                            stuck_vec, old_collision_value)
+            
+            
+>>>>>>> upstream/master
             if distance < self._distance_for_success:
                 success = True
             elif (current_timestamp - initial_timestamp) > (time_out * 1000):
                 fail = True
+<<<<<<< HEAD
             elif collision_as_failure and (col_ped or col_veh or col_oth):
                 fail = True
             elif traffic_light_as_failure and traffic_light_state == 'red':
@@ -465,6 +568,17 @@ class DrivingBenchmark(object):
             logging.info(
                 'red %f green %f, total %f',
                 number_red_lights, number_green_lights, number_red_lights + number_green_lights)
+=======
+            elif is_stuck:
+                fail = True
+            elif collision_as_failure and (col_ped or col_veh or col_oth):
+                fail = True
+
+            time_remain = (time_out * 1000 - (current_timestamp - initial_timestamp))/1000
+            logging.info('Time remaining: %i m %i s', time_remain/60, time_remain%60)            
+            logging.info('')
+            
+>>>>>>> upstream/master
             # Increment the vectors and append the measurements and controls.
             frame += 1
             measurement_vec.append(measurements.player_measurements)
@@ -472,10 +586,15 @@ class DrivingBenchmark(object):
 
         if success:
             return 1, measurement_vec, control_vec, float(
+<<<<<<< HEAD
                 current_timestamp - initial_timestamp) / 1000.0, distance,  col_ped, col_veh, col_oth, \
                    number_red_lights, number_green_lights
         return 0, measurement_vec, control_vec, time_out, distance, col_ped, col_veh, col_oth, \
             number_red_lights, number_green_lights
+=======
+                current_timestamp - initial_timestamp) / 1000.0, distance,  col_ped, col_veh, col_oth
+        return 0, measurement_vec, control_vec, time_out, distance, col_ped, col_veh, col_oth
+>>>>>>> upstream/master
 
 
 def run_driving_benchmark(agent,
@@ -513,9 +632,15 @@ def run_driving_benchmark(agent,
                 print("----- Printing results for training weathers (Seen in Training) -----")
                 print("")
                 print("")
+<<<<<<< HEAD
                 results_printer.print_summary(benchmark_summary, experiment_suite.train_weathers,
                                               benchmark.get_path())
 
+=======
+                av = results_printer.print_summary(benchmark_summary, experiment_suite.train_weathers,
+                                              benchmark.get_path())
+                open('/home/rsi/Desktop/CAL/PythonClient/_benchmarks_results/' + log_name + '_av_succ_'+ str(av) + '.txt', 'w')
+>>>>>>> upstream/master
                 print("")
                 print("")
                 print("----- Printing results for test weathers (Unseen in Training) -----")
@@ -529,4 +654,8 @@ def run_driving_benchmark(agent,
 
         except TCPConnectionError as error:
             logging.error(error)
+<<<<<<< HEAD
             time.sleep(1)
+=======
+            time.sleep(2)
+>>>>>>> upstream/master

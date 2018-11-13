@@ -1,6 +1,10 @@
 import csv
 import datetime
 import os
+<<<<<<< HEAD
+=======
+from shutil import copyfile
+>>>>>>> upstream/master
 
 
 class Recording(object):
@@ -24,9 +28,13 @@ class Recording(object):
                               'time_out': -1,
                               'end_pedestrian_collision': -1,
                               'end_vehicle_collision': -1,
+<<<<<<< HEAD
                               'end_other_collision': -1,
                               'number_red_lights': -1,
                               'number_green_lights': -1
+=======
+                              'end_other_collision': -1
+>>>>>>> upstream/master
                               }
         self._dict_measurements = {'exp_id': -1,
                                    'rep': -1,
@@ -63,6 +71,17 @@ class Recording(object):
 
         self._create_log_files()
 
+<<<<<<< HEAD
+=======
+
+
+        ### CHANGE TO ORIGINAL CODE: copy the general params into the folder
+        if not continue_experiment:
+            params_path = 'agents/CAL_agent/controller/params'
+            copyfile(params_path + '/general_params.txt', self._path + '/general_params.txt')
+
+
+>>>>>>> upstream/master
         # A log with a date file: to show when was the last access and log what was tested,
         now = datetime.datetime.now()
         self._internal_log_name = os.path.join(self._path, 'log_' + now.strftime("%Y%m%d%H%M"))
@@ -99,8 +118,12 @@ class Recording(object):
     def write_summary_results(self, experiment, pose, rep,
                               path_distance, remaining_distance,
                               final_time, time_out, result,
+<<<<<<< HEAD
                               end_pedestrian, end_vehicle, end_other,
                               number_red_lights, number_green_lights):
+=======
+                              end_pedestrian, end_vehicle, end_other):
+>>>>>>> upstream/master
         """
         Method to record the summary of an episode(pose) execution
         """
@@ -118,8 +141,11 @@ class Recording(object):
         self._dict_summary['end_pedestrian_collision'] = end_pedestrian
         self._dict_summary['end_vehicle_collision'] = end_vehicle
         self._dict_summary['end_other_collision'] = end_other
+<<<<<<< HEAD
         self._dict_summary['number_red_lights'] = number_red_lights
         self._dict_summary['number_green_lights'] = number_green_lights
+=======
+>>>>>>> upstream/master
 
 
 

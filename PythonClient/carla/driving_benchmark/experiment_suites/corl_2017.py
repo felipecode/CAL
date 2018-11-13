@@ -18,7 +18,7 @@ class CoRL2017(ExperimentSuite):
 
     @property
     def train_weathers(self):
-        return [1, 3, 5, 8]
+        return [1, 3, 6, 8]
 
     @property
     def test_weathers(self):
@@ -80,7 +80,6 @@ class CoRL2017(ExperimentSuite):
                     [70, 73], [46, 67], [57, 50], [61, 49], [21, 12],
                     [51, 81], [77, 68], [56, 65], [43, 54]]
 
-        return [_poses_navigation()]
         return [_poses_straight(),
                 _poses_one_curve(),
                 _poses_navigation(),
@@ -99,10 +98,10 @@ class CoRL2017(ExperimentSuite):
         # This single RGB camera is used on every experiment
 
         camera = Camera('CameraRGB')
-        camera.set(FOV=90)
+        camera.set(FOV=100)
         camera.set_image_size(800, 600)
-        camera.set_position(1.44, 0.0, 1.2)
-        camera.set_rotation(0, 0, 0)
+        camera.set_position(2.0, 0.0, 1.4)
+        camera.set_rotation(-15.0, 0, 0)
 
         if self._city_name == 'Town01':
             poses_tasks = self._poses_town01()
@@ -110,8 +109,8 @@ class CoRL2017(ExperimentSuite):
             pedestrians_tasks = [0, 0, 0, 50]
         else:
             poses_tasks = self._poses_town02()
-            vehicles_tasks = [15, 0, 0, 15]
-            pedestrians_tasks = [30, 0, 0, 50]
+            vehicles_tasks = [0, 0, 0, 15]
+            pedestrians_tasks = [0, 0, 0, 50]
 
         experiments_vector = []
 

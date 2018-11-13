@@ -4,6 +4,10 @@ CarlaUE4/
 weights/
 Engine/
 CarlaUE4.sh
+<<<<<<< HEAD
+=======
+data/
+>>>>>>> upstream/master
 __pycache__/
 **.swp
 **.swo
@@ -11,4 +15,8 @@ __pycache__/
 **.swn
 **.swo
 **.pyc
+<<<<<<< HEAD
 full_model_weights.h5
+=======
+data.zip
+>>>>>>> upstream/master

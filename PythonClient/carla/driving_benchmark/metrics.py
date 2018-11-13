@@ -190,6 +190,7 @@ class Metrics(object):
 
         return count_lane_intersect, count_sidewalk_intersect
 
+<<<<<<< HEAD
 
     def _get_percentage_out_road(self, selected_matrix, header):
 
@@ -228,6 +229,8 @@ class Metrics(object):
         return float(count_outside)/float(selected_matrix.shape[0])
 
 
+=======
+>>>>>>> upstream/master
     def compute(self, path):
 
         """
@@ -291,10 +294,13 @@ class Metrics(object):
                                                      all_weathers},
                               'collision_other': {w: [[] for i in range(len(tasks))] for w in
                                                   all_weathers},
+<<<<<<< HEAD
                               'percentage_off_road': {w: [[] for i in range(len(tasks))] for w in
                                                          all_weathers},
                               'percentage_green_lights': {w: [0] * len(tasks) for w in
                                                              all_weathers},
+=======
+>>>>>>> upstream/master
                               'end_pedestrian_collision': {w: [0] * len(tasks) for w in
                                                            all_weathers},
                               'end_vehicle_collision': {w: [0] * len(tasks) for w in
@@ -334,6 +340,7 @@ class Metrics(object):
                 metrics_dictionary['end_other_collision'][w][t] = \
                     experiment_results_matrix[:, header.index('end_other_collision')].tolist()
 
+<<<<<<< HEAD
                 metrics_dictionary['percentage_green_lights'][w][t] = np.nan_to_num((
                     experiment_results_matrix[:, header.index('number_green_lights')]/
                 (experiment_results_matrix[:, header.index('number_green_lights')] +
@@ -341,6 +348,8 @@ class Metrics(object):
 
 
 
+=======
+>>>>>>> upstream/master
                 metrics_dictionary['episodes_fully_completed'][w][t] = \
                     experiment_results_matrix[:, header.index('result')].tolist()
 
@@ -376,11 +385,14 @@ class Metrics(object):
                     metrics_dictionary['intersection_offroad'][
                         w][t].append(lane_road[1])
 
+<<<<<<< HEAD
                     metrics_dictionary['percentage_off_road'][
                         w][t].append(self._get_percentage_out_road(
                         episode_experiment_metrics, header_metrics))
 
 
+=======
+>>>>>>> upstream/master
                     if tasks[t] in set(self._parameters['dynamic_tasks']):
 
                         collisions = self._get_collisions(episode_experiment_metrics,

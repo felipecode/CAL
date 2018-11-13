@@ -11,7 +11,7 @@ import logging
 
 from carla.driving_benchmark import run_driving_benchmark
 from carla.driving_benchmark.experiment_suites import CoRL2017, BasicExperimentSuite, LongitudinalControl2018
-from carla.driving_benchmark.experiment_suites import BasicExperimentSuite
+
 from agents.CAL_agent.CAL_agent import CAL
 
 if __name__ == '__main__':
@@ -77,7 +77,6 @@ if __name__ == '__main__':
     logging.basicConfig(format='%(levelname)s: %(message)s', level=log_level)
     logging.info('listening to server %s:%s', args.host, args.port)
 
-    # instantiate the agent
     agent = CAL(args.city_name)
 
     # We instantiate an experiment suite. Basically a set of experiments

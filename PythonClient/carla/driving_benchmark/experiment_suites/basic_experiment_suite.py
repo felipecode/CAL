@@ -18,11 +18,11 @@ class BasicExperimentSuite(ExperimentSuite):
 
     @property
     def train_weathers(self):
-        return [1,3,4,5,8,14]
+        return [1]
 
     @property
     def test_weathers(self):
-        return []
+        return [1]
 
     def build_experiments(self):
         """
@@ -39,26 +39,18 @@ class BasicExperimentSuite(ExperimentSuite):
             vehicles_tasks = [0, 0, 0, 20]
             pedestrians_tasks = [0, 0, 0, 50]
         else:
-            right_curves =  [[[1,56],[65,69],[78,51],[44,61],[40,17],[71,16],[74,38],[46,12],
-                              [19,18],[26,74],[37,76],[11,44],[20,6],[10,22],[28,2],[5,15],
-                              [14,33],[34,8]]]      
-            left_curves =  [[[57,82],[72,43],[52,79],[70,66],[43,14],[11,47],[79,32],[37,75],
-                             [75,16],[26,73],[39,5],[2,37],[34,13],[6,35],[10,19],[23,6],
-                             [5,30],[16,2]]] 
-            special_test =  [[[57,82],[70,66],[43,14],[79,32],[75,16],[34,13], [5,30]]]
-
-            poses_tasks = left_curves
-            vehicles_tasks = [0]*len(poses_tasks[0])
-            pedestrians_tasks = [0]*len(poses_tasks[0])
+            poses_tasks = [[[4, 2]], [[37, 76]], [[19, 66]], [[19, 66]]]
+            vehicles_tasks = [0, 0, 0, 15]
+            pedestrians_tasks = [0, 0, 0, 50]
 
         # We set the camera
         # This single RGB camera is used on every experiment
 
         camera = Camera('CameraRGB')
-        camera.set(FOV=90)
+        camera.set(FOV=100)
         camera.set_image_size(800, 600)
-        camera.set_position(1.44, 0.0, 1.2)
-        camera.set_rotation(0, 0, 0)
+        camera.set_position(2.0, 0.0, 1.4)
+        camera.set_rotation(-15.0, 0, 0)
 
         # Based on the parameters, creates a vector with experiment objects.
         experiments_vector = []

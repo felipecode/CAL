@@ -15,10 +15,7 @@ class ExperimentSuite(object):
         that is calculated based on distance to goal.
         This is the same timeout as used on the CoRL paper.
         """
-        # return ((path_distance / 1000.0) / 10.0) * 3600.0 + 10.0
-        
-        ### CHANGE ORIGINAL CODE: new, stricter time limit
-        return (path_distance / 1000.0 / 50.0) * 3600.0 + 10.0
+        return ((path_distance / 1000.0) / 10.0) * 3600.0 + 10.0
 
     def get_number_of_poses_task(self):
         """
@@ -88,6 +85,9 @@ class ExperimentSuite(object):
     def collision_as_failure(self):
         return False
 
+    @property
+    def traffic_light_as_failure(self):
+        return False
 
     @abc.abstractmethod
     def build_experiments(self):
