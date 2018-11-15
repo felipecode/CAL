@@ -84,13 +84,14 @@ class TaskBlockEnsemble(object):
 
 class CAL_network(object):
     def __init__(self, ensemble=True):
-        front_model, _, preprocessing = get_conv_model()
-        self.conv_model = front_model
-        self.preprocessing = preprocessing
 
         config = tf.ConfigProto()
         config.gpu_options.allow_growth=True
         set_session(tf.Session(config=config))
+
+        front_model, _, preprocessing = get_conv_model()
+        self.conv_model = front_model
+        self.preprocessing = preprocessing
 
         if ensemble:
             self.model = TaskBlockEnsemble()
