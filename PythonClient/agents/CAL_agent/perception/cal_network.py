@@ -3,6 +3,8 @@ import numpy as np
 import os
 from PIL import Image
 
+import tensorflow as tf
+from keras.backend.tensorflow_backend import set_session
 # the outputs of the network are normalized to a range of -1 to 1
 # therefore we need to multiply it by the normalization constants
 # (which where calculated on the training set)
@@ -85,6 +87,11 @@ class CAL_network(object):
         front_model, _, preprocessing = get_conv_model()
         self.conv_model = front_model
         self.preprocessing = preprocessing
+
+        config = tf.ConfigProto()
+        config.gpu_options.allow_growth=True
+        set_session(tf.Session(config=config))
+
         if ensemble:
             self.model = TaskBlockEnsemble()
         else:
