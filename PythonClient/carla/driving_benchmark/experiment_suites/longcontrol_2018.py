@@ -95,14 +95,16 @@ class LongitudinalControl2018(ExperimentSuite):
             poses_tasks = self._poses_town01()
             vehicles_tasks = [0, 20, 100]
             pedestrians_tasks = [0, 50, 250]
+            weathers = [1,3,6,8]
         else:
             poses_tasks = self._poses_town02()
             vehicles_tasks = [0, 15, 70]
             pedestrians_tasks = [0, 50, 150]
+            weathers = [10, 14]
 
         experiments_vector = []
 
-        for weather in self.weathers:
+        for weather in weathers:
 
             for iteration in range(len(poses_tasks)):
                 poses = poses_tasks[iteration]
